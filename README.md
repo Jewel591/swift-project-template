@@ -30,3 +30,12 @@ Swift 项目模板仓库。通过 GitHub Issue Forms 记录产品与技术决策
 - **当前项目选择** — 下拉选择具体方案
 - **实施清单** — 勾选式 TODO，跟踪开发进度
 - **备注** — 补充说明
+
+## 法律文档
+
+| 文档 | 链接 |
+|------|------|
+| 用户协议（EULA） | [Apple Standard EULA](https://www.apple.com/legal/internet-services/itunes/dev/stdeula/) |
+| 隐私政策 | [隐私政策](https://cats-lead-ll1.craft.me/fcFpKKe0ciczOi) |
+
+> 需在 App 内（如登录等页面）及 App Store Connect「描述」底部添加以上链接 —— 中国区审核强制要求。
