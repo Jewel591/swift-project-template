@@ -1,0 +1,40 @@
+name: "多语言支持"
+description: "选择项目的多语言方案"
+title: "多语言支持"
+labels: ["prd", "扩展"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 说明
+        是否需要支持多语言？推荐使用 String Catalogs（.xcstrings）实现，跟随系统语言自动切换。
+
+  - type: dropdown
+    id: choice
+    attributes:
+      label: 当前项目选择
+      options:
+        - 中文（简体）+ 英文
+        - 仅中文（简体）
+        - 仅英文
+        - 多语言（3 种以上）
+        - 暂不需要
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: 实施清单
+      options:
+        - label: 创建 Localizable.xcstrings 文件
+        - label: 提取所有用户可见字符串
+        - label: 完成中文翻译
+        - label: 完成英文翻译
+        - label: 测试各语言下 UI 布局
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: 备注
+      placeholder: "如需支持特定语言，请在此说明"

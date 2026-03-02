@@ -1,0 +1,35 @@
+name: "反馈渠道"
+description: "选择用户反馈渠道"
+title: "反馈渠道"
+labels: ["prd", "增强"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 说明
+        选择需要集成的用户反馈渠道，方便收集用户意见和问题报告。
+
+  - type: checkboxes
+    id: choice
+    attributes:
+      label: 当前项目选择
+      options:
+        - label: GitHub Issues
+        - label: 应用内反馈表单
+        - label: 邮件反馈
+        - label: 暂不需要
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: 实施清单
+      options:
+        - label: 在设置页添加反馈入口
+        - label: 实现反馈表单 / 跳转逻辑
+        - label: 配置反馈接收渠道
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: 备注
+      placeholder: "补充说明"

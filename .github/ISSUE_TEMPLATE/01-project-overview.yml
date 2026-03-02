@@ -1,0 +1,62 @@
+name: "产品概述"
+description: "定义项目基本信息：名称、描述、平台、版本、分发方式"
+title: "产品概述"
+labels: ["prd"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 说明
+        定义项目的基本信息和产品定位，作为所有后续决策的基础。
+
+  - type: input
+    id: project-name
+    attributes:
+      label: 项目名称
+      placeholder: "例如：ClaudeNotch"
+    validations:
+      required: true
+
+  - type: textarea
+    id: project-description
+    attributes:
+      label: 产品描述
+      placeholder: "简要描述产品定位和核心功能"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: platforms
+    attributes:
+      label: 目标平台
+      options:
+        - label: iOS
+        - label: macOS
+        - label: watchOS
+        - label: visionOS
+
+  - type: input
+    id: min-version
+    attributes:
+      label: 最低系统版本
+      placeholder: "例如：iOS 17+ / macOS 15+"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: distribution
+    attributes:
+      label: 分发方式
+      options:
+        - App Store
+        - TestFlight
+        - 直接分发（DMG / PKG）
+        - 暂未确定
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: 备注
+      placeholder: "补充说明"

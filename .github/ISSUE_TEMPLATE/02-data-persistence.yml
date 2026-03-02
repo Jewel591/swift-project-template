@@ -1,0 +1,44 @@
+name: "数据持久化方案"
+description: "选择项目的数据持久化与同步方案"
+title: "数据持久化方案"
+labels: ["prd", "基础"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 说明
+        选择项目的数据持久化方案。
+        - **SwiftData + iCloud**：本地优先，CloudKit 自动同步，适合个人工具类 App
+        - **Supabase**：SaaS 远端优先，PostgreSQL，适合多端实时同步场景
+        - **Core Data + CloudKit**：传统方案，适合需要精细控制的场景
+
+  - type: dropdown
+    id: choice
+    attributes:
+      label: 当前项目选择
+      options:
+        - SwiftData + iCloud（本地优先，CloudKit 自动同步）
+        - Supabase（SaaS 远端优先，PostgreSQL）
+        - Core Data + CloudKit
+        - 无需持久化
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: 实施清单
+      description: "根据所选方案勾选需要完成的事项"
+      options:
+        - label: 定义数据模型（@Model）
+        - label: 配置 ModelContainer
+        - label: 实现 DataActor 后台读写
+        - label: 配置 iCloud / CloudKit 同步
+        - label: 配置 Supabase 客户端
+        - label: 实现数据迁移方案
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: 备注
+      placeholder: "需要同步的数据类型、离线优先需求、迁移注意事项等"

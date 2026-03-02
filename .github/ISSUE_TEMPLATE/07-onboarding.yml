@@ -1,0 +1,39 @@
+name: "Onboarding 引导流程"
+description: "选择新用户引导方案"
+title: "Onboarding 引导流程"
+labels: ["prd", "增强"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 说明
+        新用户首次打开 App 时的引导体验。
+        - **TipKit**：轻量级，在 UI 元素旁显示提示气泡
+        - **全屏引导页**：适合功能复杂、需要逐步介绍的 App
+
+  - type: dropdown
+    id: choice
+    attributes:
+      label: 当前项目选择
+      options:
+        - TipKit 提示引导
+        - 全屏引导页（Welcome Screen）
+        - 不需要
+        - 暂未确定
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: 实施清单
+      options:
+        - label: 设计引导内容和步骤
+        - label: 实现引导 UI
+        - label: 配置首次启动检测逻辑
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: 备注
+      placeholder: "补充说明"

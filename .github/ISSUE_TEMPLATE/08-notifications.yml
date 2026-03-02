@@ -1,0 +1,39 @@
+name: "推送通知"
+description: "选择推送通知方案"
+title: "推送通知"
+labels: ["prd", "增强"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 说明
+        - **本地通知**：无需服务端，适合基于本地事件的提醒（如用量超标）
+        - **远程推送**：需要 APNs 配置，适合服务端触发的通知
+
+  - type: dropdown
+    id: choice
+    attributes:
+      label: 当前项目选择
+      options:
+        - 本地通知
+        - 远程推送（APNs）
+        - 不需要
+        - 暂未确定
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: 实施清单
+      options:
+        - label: 请求通知权限
+        - label: 实现通知触发逻辑
+        - label: 配置通知内容和样式
+        - label: 在设置页添加通知开关
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: 备注
+      placeholder: "通知触发场景，例如：用量超过阈值时提醒"
