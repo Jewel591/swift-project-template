@@ -1,0 +1,13 @@
+{
+  "enableAllProjectMcpServers": true,
+  "permissions": {
+    "allow": [
+      "mcp__xcode__XcodeListWindows",
+      "mcp__xcode__XcodeRead"
+    ],
+    "additionalDirectories": [
+      "/Users/ivensliao/Documents/DevProjects/Swift Projects/LayoutUIKit",
+      "/Users/ivensliao/Documents/DevProjects/Swift Projects/BrandKit"
+    ]
+  }
+}
