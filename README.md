@@ -5,9 +5,11 @@ Swift 项目模板仓库。通过 GitHub Issue Forms 记录产品与技术决策
 ## 使用方式
 
 1. 点击 **Use this template** 创建新仓库
-2. 在新仓库中打开 **Issues → New Issue**
-3. 为每个需要的功能模块创建对应的 Issue
-4. 填写决策选项和实施清单，完成后关闭 Issue
+2. 在新仓库中进入 **Actions → 初始化 PRD Issues → Run workflow**，一键创建全部 PRD Issue
+3. 打开各个 Issue，编辑填写决策选项和实施清单
+4. 功能开发完成后关闭对应 Issue
+
+> 也可以手动通过 Issues → New Issue 从模板逐个创建。
 
 ## Issue 模板列表
 

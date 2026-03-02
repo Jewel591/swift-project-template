@@ -1,0 +1,200 @@
+name: 初始化 PRD Issues
+
+on:
+  workflow_dispatch:
+
+jobs:
+  create-issues:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: 创建 PRD Issues
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          # 产品概述
+          gh issue create --repo "$REPO" \
+            --title "产品概述" \
+            --label "prd" \
+            --body "$(cat <<'EOF'
+          ## 说明
+          定义项目的基本信息和产品定位，作为所有后续决策的基础。
+
+          ## 当前项目选择
+          - **项目名称**：
+          - **产品描述**：
+          - **目标平台**：[ ] iOS / [ ] macOS / [ ] watchOS / [ ] visionOS
+          - **最低系统版本**：
+          - **分发方式**：
+
+          ## 实施清单
+          - [ ] 确定项目名称和 Bundle ID
+          - [ ] 创建 Xcode 项目
+          - [ ] 配置目标平台和最低版本
+
+          ## 备注
+          EOF
+          )"
+
+          # 数据持久化方案
+          gh issue create --repo "$REPO" \
+            --title "数据持久化方案" \
+            --label "prd,基础" \
+            --body "$(cat <<'EOF'
+          ## 说明
+          选择项目的数据持久化方案。
+          - **SwiftData + iCloud**：本地优先，CloudKit 自动同步，适合个人工具类 App
+          - **Supabase**：SaaS 远端优先，PostgreSQL，适合多端实时同步场景
+          - **Core Data + CloudKit**：传统方案，适合需要精细控制的场景
+
+          ## 当前项目选择
+          > 请选择：SwiftData + iCloud / Supabase / Core Data + CloudKit / 无需持久化
+
+          ## 实施清单
+          - [ ] 定义数据模型（@Model）
+          - [ ] 配置 ModelContainer
+          - [ ] 实现 DataActor 后台读写
+          - [ ] 配置 iCloud / CloudKit 同步
+
+          ## 备注
+          EOF
+          )"
+
+          # 多语言支持
+          gh issue create --repo "$REPO" \
+            --title "多语言支持" \
+            --label "prd,扩展" \
+            --body "$(cat <<'EOF'
+          ## 说明
+          是否需要支持多语言？推荐使用 String Catalogs（.xcstrings）实现，跟随系统语言自动切换。
+
+          ## 当前项目选择
+          > 请选择：中文（简体）+ 英文 / 仅中文 / 仅英文 / 多语言（3 种以上）/ 暂不需要
+
+          ## 实施清单
+          - [ ] 创建 Localizable.xcstrings 文件
+          - [ ] 提取所有用户可见字符串
+          - [ ] 完成中文翻译
+          - [ ] 完成英文翻译
+          - [ ] 测试各语言下 UI 布局
+
+          ## 备注
+          EOF
+          )"
+
+          # 内购
+          gh issue create --repo "$REPO" \
+            --title "内购" \
+            --label "prd,增强" \
+            --body "$(cat <<'EOF'
+          ## 说明
+          内购用于承载 Pro 权益解锁能力，并通过付费墙向用户展示可购买权益。
+          1. 统一采用 RevenueCat 进行内购管理。
+          2. 付费方式可选一次性买断或订阅制；订阅制通常提供月度订阅和年度订阅两种。
+          3. 可在备注中说明预期的内购价格设置。
+
+          ## 当前项目选择
+          > 请选择：一次性买断（Lifetime）/ 订阅制（月度 + 年度）/ 一次性买断 + 订阅制 / 免费（无内购）/ 暂未确定
+
+          ## 实施清单
+          - [ ] 添加 RevenueCat SDK
+          - [ ] 配置商品（App Store Connect + RevenueCat Dashboard）
+          - [ ] 实现付费墙 UI
+          - [ ] 添加 Pro 权益守卫（功能限制）
+          - [ ] 实现购买恢复功能
+
+          ## 备注
+          EOF
+          )"
+
+          # 版本更新提示
+          gh issue create --repo "$REPO" \
+            --title "版本更新提示" \
+            --label "prd,增强" \
+            --body "$(cat <<'EOF'
+          ## 说明
+          App Store 分发自带更新机制；直接分发（DMG/PKG）需要 Sparkle 等框架自建更新检查。
+
+          ## 当前项目选择
+          > 请选择：App Store 自动更新 / Sparkle 框架（macOS 直接分发）/ 手动检查 GitHub Release / 暂不需要
+
+          ## 实施清单
+          - [ ] 集成更新检查框架
+          - [ ] 配置更新源（Feed URL / Release API）
+          - [ ] 实现更新提示 UI
+          - [ ] 测试更新流程
+
+          ## 备注
+          EOF
+          )"
+
+          # 反馈渠道
+          gh issue create --repo "$REPO" \
+            --title "反馈渠道" \
+            --label "prd,增强" \
+            --body "$(cat <<'EOF'
+          ## 说明
+          选择需要集成的用户反馈渠道，方便收集用户意见和问题报告。
+
+          ## 当前项目选择
+          - [ ] GitHub Issues
+          - [ ] 应用内反馈表单
+          - [ ] 邮件反馈
+          - [ ] 暂不需要
+
+          ## 实施清单
+          - [ ] 在设置页添加反馈入口
+          - [ ] 实现反馈表单 / 跳转逻辑
+          - [ ] 配置反馈接收渠道
+
+          ## 备注
+          EOF
+          )"
+
+          # Onboarding 引导流程
+          gh issue create --repo "$REPO" \
+            --title "Onboarding 引导流程" \
+            --label "prd,增强" \
+            --body "$(cat <<'EOF'
+          ## 说明
+          新用户首次打开 App 时的引导体验。
+          - **TipKit**：轻量级，在 UI 元素旁显示提示气泡
+          - **全屏引导页**：适合功能复杂、需要逐步介绍的 App
+
+          ## 当前项目选择
+          > 请选择：TipKit 提示引导 / 全屏引导页（Welcome Screen）/ 不需要 / 暂未确定
+
+          ## 实施清单
+          - [ ] 设计引导内容和步骤
+          - [ ] 实现引导 UI
+          - [ ] 配置首次启动检测逻辑
+
+          ## 备注
+          EOF
+          )"
+
+          # 推送通知
+          gh issue create --repo "$REPO" \
+            --title "推送通知" \
+            --label "prd,增强" \
+            --body "$(cat <<'EOF'
+          ## 说明
+          - **本地通知**：无需服务端，适合基于本地事件的提醒（如用量超标）
+          - **远程推送**：需要 APNs 配置，适合服务端触发的通知
+
+          ## 当前项目选择
+          > 请选择：本地通知 / 远程推送（APNs）/ 不需要 / 暂未确定
+
+          ## 实施清单
+          - [ ] 请求通知权限
+          - [ ] 实现通知触发逻辑
+          - [ ] 配置通知内容和样式
+          - [ ] 在设置页添加通知开关
+
+          ## 备注
+          EOF
+          )"
+
+          echo "✅ 已创建 8 个 PRD Issues"
