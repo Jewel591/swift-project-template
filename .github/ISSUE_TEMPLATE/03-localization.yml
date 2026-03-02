@@ -1,6 +1,6 @@
 name: "多语言支持"
 description: "选择项目的多语言方案"
-title: "多语言支持"
+title: "[ADR] 多语言支持"
 labels: ["prd", "扩展"]
 body:
   - type: markdown

@@ -1,6 +1,6 @@
 name: "版本更新提示"
 description: "选择版本更新检查方案"
-title: "版本更新提示"
+title: "[ADR] 版本更新提示"
 labels: ["prd", "增强"]
 body:
   - type: markdown

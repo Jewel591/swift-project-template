@@ -1,6 +1,6 @@
 name: "推送通知"
 description: "选择推送通知方案"
-title: "推送通知"
+title: "[ADR] 推送通知"
 labels: ["prd", "增强"]
 body:
   - type: markdown

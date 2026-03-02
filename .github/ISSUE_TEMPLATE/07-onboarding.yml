@@ -1,6 +1,6 @@
 name: "Onboarding 引导流程"
 description: "选择新用户引导方案"
-title: "Onboarding 引导流程"
+title: "[ADR] Onboarding 引导流程"
 labels: ["prd", "增强"]
 body:
   - type: markdown

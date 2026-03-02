@@ -26,7 +26,7 @@ jobs:
         run: |
           # 产品概述
           gh issue create --repo "$REPO" \
-            --title "产品概述" \
+            --title "[PRD] 产品概述" \
             --label "prd" \
             --body "$(cat <<'EOF'
           ## 说明
@@ -50,7 +50,7 @@ jobs:
 
           # 数据持久化方案
           gh issue create --repo "$REPO" \
-            --title "数据持久化方案" \
+            --title "[ADR] 数据持久化方案" \
             --label "prd,基础" \
             --body "$(cat <<'EOF'
           ## 说明
@@ -74,7 +74,7 @@ jobs:
 
           # 多语言支持
           gh issue create --repo "$REPO" \
-            --title "多语言支持" \
+            --title "[ADR] 多语言支持" \
             --label "prd,扩展" \
             --body "$(cat <<'EOF'
           ## 说明
@@ -96,7 +96,7 @@ jobs:
 
           # 内购
           gh issue create --repo "$REPO" \
-            --title "内购" \
+            --title "[ADR] 内购" \
             --label "prd,增强" \
             --body "$(cat <<'EOF'
           ## 说明
@@ -121,7 +121,7 @@ jobs:
 
           # 版本更新提示
           gh issue create --repo "$REPO" \
-            --title "版本更新提示" \
+            --title "[ADR] 版本更新提示" \
             --label "prd,增强" \
             --body "$(cat <<'EOF'
           ## 说明
@@ -142,7 +142,7 @@ jobs:
 
           # 反馈渠道
           gh issue create --repo "$REPO" \
-            --title "反馈渠道" \
+            --title "[ADR] 反馈渠道" \
             --label "prd,增强" \
             --body "$(cat <<'EOF'
           ## 说明
@@ -165,7 +165,7 @@ jobs:
 
           # Onboarding 引导流程
           gh issue create --repo "$REPO" \
-            --title "Onboarding 引导流程" \
+            --title "[ADR] Onboarding 引导流程" \
             --label "prd,增强" \
             --body "$(cat <<'EOF'
           ## 说明
@@ -187,7 +187,7 @@ jobs:
 
           # 推送通知
           gh issue create --repo "$REPO" \
-            --title "推送通知" \
+            --title "[ADR] 推送通知" \
             --label "prd,增强" \
             --body "$(cat <<'EOF'
           ## 说明

@@ -1,6 +1,6 @@
 name: "内购"
 description: "选择项目的内购方案"
-title: "内购"
+title: "[ADR] 内购"
 labels: ["prd", "增强"]
 body:
   - type: markdown
@@ -8,9 +8,11 @@ body:
       value: |
         ## 说明
         内购用于承载 Pro 权益解锁能力，并通过付费墙向用户展示可购买权益。
-        1. 统一采用 RevenueCat 进行内购管理。
+        1. 统一采用 RevenueCat 进行内购管理，核心逻辑已封装为 [RevenueCatKit](https://github.com/Jewel591/RevenueCatKit) SPM Package。
         2. 付费方式可选一次性买断或订阅制；订阅制通常提供月度订阅和年度订阅两种。
-        3. 可在备注中说明预期的内购价格设置。
+        3. 具体实施请参考公司规范文档：[RevenueCat 内购最佳实践](https://github.com/Jewel591/Dev-Notes/blob/main/Universal/revenuecat-best-practices.md)，并尽可能按照文档要求实现。
+        4. 付费墙模板代码位于 `Dev-Notes/Universal/templates/Subscription/`，复制到项目后按 `TODO: [PROJECT]` 标注替换项目专属内容。
+        5. 如果在实施过程中发现规范文档或模板代码存在明显缺陷，或与当前项目不适用的地方，请在本 Issue 中明确提出。
 
   - type: dropdown
     id: choice
@@ -29,12 +31,17 @@ body:
     id: checklist
     attributes:
       label: 实施清单
+      description: "对照规范文档逐项完成"
       options:
-        - label: 添加 RevenueCat SDK
-        - label: 配置商品（App Store Connect + RevenueCat Dashboard）
-        - label: 实现付费墙 UI
-        - label: 添加 Pro 权益守卫（功能限制）
-        - label: 实现购买恢复功能
+        - label: 安装 RevenueCatKit SPM Package（确认模板项目是否已包含）
+        - label: 创建 RevenueCat Dashboard 项目并获取 API Key
+        - label: 配置 App Store Connect 商品（订阅组 / 内购项目）
+        - label: 复制模板文件到 Features/Subscription/ 并替换项目专属配置
+        - label: App 入口配置 RevenueCatViewModel.configure(config:)
+        - label: ContentView 绑定付费墙 .fullScreenCover
+        - label: 替换付费墙模板中的项目专属内容（文案、品牌色、权益列表等）
+        - label: 在功能入口添加 checkPremiumAccessOrShowPaywall() 权限检查
+        - label: 验证购买和恢复购买流程
 
   - type: textarea
     id: notes

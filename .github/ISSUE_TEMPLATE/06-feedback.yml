@@ -1,6 +1,6 @@
 name: "反馈渠道"
 description: "选择用户反馈渠道"
-title: "反馈渠道"
+title: "[ADR] 反馈渠道"
 labels: ["prd", "增强"]
 body:
   - type: markdown

@@ -1,6 +1,6 @@
 name: "数据持久化方案"
 description: "选择项目的数据持久化与同步方案"
-title: "数据持久化方案"
+title: "[ADR] 数据持久化方案"
 labels: ["prd", "基础"]
 body:
   - type: markdown

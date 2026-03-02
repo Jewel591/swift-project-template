@@ -1,6 +1,6 @@
 name: "产品概述"
 description: "定义项目基本信息：名称、描述、平台、版本、分发方式"
-title: "产品概述"
+title: "[PRD] 产品概述"
 labels: ["prd"]
 body:
   - type: markdown
