@@ -9,6 +9,16 @@ jobs:
     permissions:
       issues: write
     steps:
+      - name: 创建 Labels
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          gh label create "prd"  --repo "$REPO" --description "产品需求决策（模板生成）" --color "0052CC" --force
+          gh label create "基础" --repo "$REPO" --description "基础功能" --color "B60205" --force
+          gh label create "增强" --repo "$REPO" --description "增强功能" --color "D93F0B" --force
+          gh label create "扩展" --repo "$REPO" --description "扩展功能" --color "FBCA04" --force
+
       - name: 创建 PRD Issues
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
