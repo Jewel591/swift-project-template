@@ -1,0 +1,416 @@
+# Eagle iOS 配套素材管理工具：市场深度调研与产品规划报告
+
+**Eagle 拥有 40 万+用户却没有移动端，这是 2026 年 iOS 设计工具赛道最大的结构性空白。**  Eagle 官方明确表示短期内不会开发移动版本， 其 5.0 版本全力押注桌面端 AI 功能。与此同时，iOS 端没有任何一款产品能同时满足「专业素材管理 + 多格式支持 + 标签系统 + Eagle 资源库兼容」的需求组合。设计工具市场以 **17.3% CAGR** 高速增长， iPad Pro 已成为设计师标配设备，当前正处于进入这一赛道的最佳窗口期。
+
+-----
+
+## 模块一：Eagle 产品深度解剖
+
+### 核心功能矩阵
+
+Eagle 由 OGDESIGN.INC 开发， 当前最新版本为 **v4.0.0 Build 20**（2026 年 3 月 4 日发布），支持 Windows 10+ 和 macOS 10.15+。其功能覆盖素材管理全流程：
+
+**收集层**：浏览器扩展（Chrome/Safari/Edge/Firefox）一键保存、 批量采集网页素材（可按尺寸和格式筛选）、  一键高清下载（自动检测高清版本）、  Alt+右键绕过下载限制、  内置截图工具、 剪贴板导入、网页/视频书签保存。  
+
+**整理层**：多层级文件夹（同一文件可归入多个文件夹且只占一份空间）、  标签系统（标签组、关联标签、模糊搜索）、**  智能文件夹**（根据条件自动归类）、  自动标签继承、 图片标注、 星级评分、查找重复文件、 自定义工作流（Action）。 
+
+**搜索层**：关键字搜索（0.5 秒内完成）、** 颜色搜索**（DeltaE 算法精准匹配）、多维筛选器（颜色/形状/类型/标签/网址/注释）、  以图搜图、 随机浏览模式。  
+
+**浏览层**：悬停预览（无需双击即可预览图片/GIF/视频/音频）、  空格键预览、 多种布局方式、 焦点缩放、  新窗口/钉在桌面。 
+
+**插件系统（4.0 引入）**：基于 JavaScript/HTML/CSS 开发，  支持 Node.js API，提供窗口/后台服务/格式扩展/检查器四种插件类型。 2026 年 3 月新增 **AI SDK 集成**和 **Eagle MCP/Skill**（AI 可直接管理资源库）。  支持 **90+ 种文件格式**预览， 涵盖图片、设计源文件（PSD/AI/Sketch/Affinity）、视频（含 Alpha 通道 MOV、Apple ProRes）、 3D、音频、字体、RAW  等。  
+
+### 定价与收入
+
+|项目   |数据                                               |
+|-----|-------------------------------------------------|
+|当前价格 |**$34.95 一次性买断**（2 台设备授权），2024 年 11 月从 $29.95 上调 |
+|额外设备 |$17.47/台                                         |
+|教育优惠 |**30% 折扣**（需邮件提交学生证明）                            |
+|商业模式 |终身授权 + 终身免费更新， 30 天免费试用                          |
+|声称用户量|**400,000+ 满意用户**                                |
+|估算总收入|**$3.6M-$6M USD**（约 2600 万 - 4300 万人民币，8 年累计）    |
+|公司性质 |自筹资金（bootstrapped），无公开融资记录                       |
+
+Eagle 从 2017 年至 2024 年保持 $29.95 价格长达 **8 年未涨价**， 首次调价 涨幅仅 16.7%，体现了对用户友好的定价策略。 
+
+### Eagle 5.0：全面押注 AI
+
+Eagle 5.0 于 2025 年 9 月预告， 预计 **2026 年 3 月发布 Beta 版**，  三大核心 AI 功能：
+
+- **AI Search**：语义化搜索，理解设计师语言（ 如「极简秋色海报 三分法构图」）  
+- **AI Action**：导入即自动命名、自动标签、自动分类，支持自定义规则，100 张图片 5 分钟内完成  
+- **Eagle MCP**：与 Claude/ChatGPT 等外部 AI Agent 连接，通过自然语言管理资源库 
+
+社区已有 **AI Autotagger 插件**支持 OpenAI、Anthropic、Gemini 和本地模型（Ollama/LM Studio），每月处理超 **1000 万素材**。 关键的是，Eagle 5.0 **完全没有提及移动端计划**。
+
+### 用户评价：移动端是头号需求
+
+Eagle 在 Trustpilot 获 **5.0/5**、 SourceForge **5.0/5**、ProductHunt 高分。用户普遍高度评价其速度、格式支持和性价比。一位管理 **200 万+** 参考图片的设计师表示：「只有 Eagle 能管理这个量级的图片」。 
+
+但几乎所有评论平台上，**无移动端**都是用户提及频次最高的缺陷：
+
+> *“I tried hard to find something negative to say about it and the only thing I came up with was that there is no iOS app yet.”*  — Medium 评测
+
+> *“Can’t wait for mobile and, especially, iPad app, to keep my stuff on hand when sketching.”* — ProductHunt 用户
+
+> *“One meaningful disadvantage is that it’s not cloud based, I have multiple devices like 2 macs, one iPad and iPhone.”*  — G2 产品设计师 
+
+其他痛点包括：缺乏原生云同步（依赖第三方云存储）、  英文客服响应慢（ 17 天才回复）、 专有格式的数据锁定担忧、 仅支持 PayPal 支付。  
+
+### Eagle 资源库技术格式
+
+Eagle 采用 `.library` 文件夹结构存储数据，格式完全可读：
+
+```
+YourLibrary.library/
+├── images/
+│   ├── LSVNSY7DPP56X.info/     # 每个素材一个文件夹（13位随机ID）
+│   │   ├── metadata.json        # 元数据（标签、颜色、尺寸、来源URL等）
+│   │   ├── image1.jpg           # 原始文件
+│   │   └── _thumbnail.png       # Eagle生成的缩略图
+├── metadata.json                # 全局元数据
+└── tags.json                    # 标签数据
+```
+
+每个素材的 `metadata.json` 包含完整的结构化信息： 唯一 ID、名称、文件大小、时间戳、扩展名、标签数组、所属文件夹 ID、来源 URL、注释、图片尺寸、**自动提取的颜色调色板（palettes）**。 这种纯 JSON + 原始文件的结构使得第三方工具可以相对容易地读取 Eagle 资源库。
+
+Eagle 还提供了 **HTTP API**（本地端口 41595），返回 JSON 数据， 覆盖文件/文件夹/标签/资源库的完整 CRUD 操作。** Plugin API** 基于 JavaScript， 无 CORS 限制，支持 Node.js 原生 API。 GitHub 上已有数个第三方项目：将 Eagle 库转 Web 发布的 Python 脚本、 Docker 化的 Eagle 库 Web 服务、 以及 TagStudio 的 Eagle 导入功能请求。 
+
+-----
+
+## 模块二：竞品全景扫描
+
+### iOS 端竞品矩阵
+
+|产品              |定价              |iOS评分    |Eagle格式  |AI功能              |iCloud同步    |维护状态       |
+|----------------|----------------|---------|---------|------------------|------------|-----------|
+|Raindrop.io     |免费增值，Pro $3.54/月|4.7      |❌        |✅ Stella AI 助手    |云端同步        |非常活跃       |
+|Pinterest       |免费（含广告）         |4.6      |❌        |✅ AI推荐+视觉搜索       |账号同步        |非常活跃       |
+|Milanote        |免费增值，$9.99/月    |4.4      |❌        |❌                 |✅ 云端        |活跃         |
+|are.na          |免费增值，$5/月       |4.1      |❌        |❌（反算法）            |云端          |活跃（2025重构） |
+|Savee           |免费增值，$9/月       |3.8      |❌        |❌                 |云端          |活跃         |
+|GoodLinks       |买断 $9.99        |4.7      |❌        |❌                 |✅ iCloud    |非常活跃       |
+|Gathered        |买断 ~$4.99       |4.8      |❌        |✅ Image Playground|✅ iCloud    |活跃         |
+|Morpholio Board |免费增值            |4.7      |❌        |❌                 |✅           |活跃         |
+|**Eagle Viewer**|**免费（开源）**      |新上架      |**✅ 可浏览**|❌                 |✅ iCloud/SMB|活跃（2025.11）|
+|Ember           |已停更下架           |N/A      |N/A      |N/A               |N/A         |⛔ ~2018停止  |
+|Pixave          |Mac买断 $14.99    |~3.5(Mac)|❌        |❌                 |仅Mac↔iPad   |⚠️ 疑似弃更     |
+|Inboard         |Mac App Store   |无评分      |❌        |❌                 |❌           |⚠️ 低频维护     |
+|PureRef         |桌面端随意付费         |N/A      |❌        |❌                 |❌           |❌ 无移动版     |
+
+### 关键竞品详解
+
+**Raindrop.io** 是功能最全面的跨平台收藏管理工具， 提供瀑布流视觉浏览、全文搜索、永久副本存档，  并在 2025 年推出了 **Stella AI 助手**（基于 120B 参数自建 LLM）。 但其核心定位是**书签/链接管理**，不支持本地文件管理和设计源文件预览。 
+
+**Pinterest** 拥有 **6 亿 MAU**，  AI 能力最强（视觉搜索、多模态搜索、AI 策展），但广告过多、 内容质量参差不齐，且本质是社交发现平台而非专业素材管理工具。
+
+**Gathered** 是最接近「私人 Pinterest + 设计素材管理」定位的原生 iOS App，评分高达 **4.8**，支持 iCloud 同步、标注工具、Image Playground 集成，买断价仅约 $4.99。值得重点关注作为学习对象。
+
+**are.na** 定位为「反算法」创意策展平台，2025 年底完全重构 iOS App， 拥有独特的文化社区价值，但刻意不使用 AI，免费版限制 200 个 blocks。 
+
+### 重要发现：Eagle Viewer 已存在
+
+**Eagle Viewer**（开发者 naamiru，开源项目）已于 2025 年 11 月上架 App Store， 可在 iPhone/iPad 上**只读浏览** Eagle 桌面端的 `.library` 资源库。支持 iCloud Drive 和 SMB 网络共享读取、离线缓存、 标签搜索、GIF/WebP 动图播放。 但它**仅为只读浏览器**，不能编辑、添加或管理素材，且需要 iOS 18.6+。 这验证了市场需求的真实性，同时也意味着我方产品需要提供远超只读浏览的价值。
+
+### 无任何竞品支持 Eagle 格式
+
+在所有调研产品中，**除 Eagle Viewer 的只读浏览外，没有任何产品支持导入或编辑 Eagle 的 `.library` 或 `.eaglepack` 格式**。这是一个明确的差异化切入点。
+
+### 系统级替代方案评估
+
+**iOS Files App** 支持 iCloud Drive 和标签系统，但无瀑布流/网格浏览、无标注、无智能搜索，只能作为基础文件浏览器。**iOS Photos** 具备强大的 AI 搜索能力，但仅管理照片/视频，**不支持 PSD/AI/SVG/字体/3D 等设计格式**。**Notion** 可构建自定义素材数据库（Gallery 视图），但图片浏览体验和性能不够专业。**Figma Mobile** 仅支持查看和评论，不适合素材管理。 
+
+### 结论性市场空白
+
+iOS 上缺少一款集「**本地素材管理 + 90+ 格式支持 + 专业标签系统 + 瀑布流浏览 + Eagle 资源库兼容 + AI 智能功能 + iCloud 同步**」于一体的产品。现有产品各有侧重：Raindrop 偏书签链接、  Pinterest 偏社交发现、Milanote 偏协作白板、  Gathered 偏轻量灵感收集——**没有任何一款是 Eagle 桌面端在移动端的真正对等替代**。
+
+-----
+
+## 模块三：AI 功能缺口与技术可行性
+
+### 竞品 AI 能力盘点
+
+|产品             |AI 集成深度|核心 AI 能力                                |
+|---------------|-------|----------------------------------------|
+|Eagle 5.0      |★★★★★  |AI 语义搜索、AI 自动标签/命名/分类、MCP/Agent 集成      |
+|Pinterest      |★★★★★  |视觉搜索、多模态搜索（VLM 驱动）、AI 策展、配色检测           |
+|Raindrop.io    |★★★☆☆  |Stella AI 助手（Pro）、AI 语义搜索、AI 标签建议、MCP 支持|
+|Milanote       |★☆☆☆☆  |无 AI 功能                                 |
+|are.na         |★☆☆☆☆  |无（刻意反算法）                                |
+|Savee/GoodLinks|★☆☆☆☆  |无                                       |
+
+**关键洞察**：Eagle 5.0 在桌面端的 AI 能力已是行业标杆， 但这些能力**完全没有延伸到移动端**。如果我方产品能在 iOS 上实现同等甚至更优的 AI 素材管理能力，将形成独特的差异化优势。
+
+### iOS 端 AI 技术可行性评估
+
+**a) 图片语义搜索 — 可行性：★★★★★ | 难度：中等**
+
+已有成熟的开源验证。**Queryable**（GitHub: mazzzystar/Queryable，已上架 App Store）使用 OpenAI CLIP ViT-B/32 和 Apple **MobileCLIP** 模型，完全离线运行，iPhone 12 mini 上索引速度约 **2000 张/分钟**，1 万张图搜索**不到 1 秒**，3.5 万张约 2.8 秒。技术路径是将 CLIP 模型拆分为 TextEncoder 和 ImageEncoder 两个 Core ML 模型（共约 300MB），图片向量预计算一次并存储，文字向量实时计算， 512 维向量余弦相似度比较。Apple 已在 HuggingFace 开源 MobileCLIP，专为 Neural Engine 优化。 
+
+**b) 自动标签/分类 — 可行性：★★★★★ | 难度：简单→中等**
+
+三层方案：Vision Framework 内置 `VNClassifyImageRequest` 支持 **5000+ 物体类别**，准确率超 90%，零配置即用；Create ML 可训练自定义设计风格分类器（极简/扁平/拟物/赛博朋克等）；iOS 26+ 的 **Foundation Models Framework** 可调用本地 LLM 生成语义标签。
+
+**c) OCR 文字识别 — 可行性：★★★★★ | 难度：简单**
+
+Vision Framework 的 `VNRecognizeTextRequest` 完全内置于 iOS 13+，支持印刷体和手写体、多语言（中英日等），代码量极小。iOS 15+ 的 Live Text / VisionKit 提供系统级 OCR。**这是最容易实现的 AI 功能**。
+
+**d) 图片去重 — 可行性：★★★★★ | 难度：简单→中等**
+
+Vision Framework 的 `VNGenerateImageFeaturePrintRequest` 生成图片特征指纹，一行代码即可计算两张图的相似距离。 开源库 CocoaImageHashing 提供 aHash/dHash/pHash 三种感知哈希算法，O(1) 时间比较。还可复用 CLIP 向量做语义级去重。
+
+**e) 配色方案提取 — 可行性：★★★★★ | 难度：简单**
+
+Apple 官方文档提供了基于 vImage + k-means 聚类的主色调提取示例。Swift 生态有 **5+ 个成熟开源库**（DominantColors、ColorKit、UIImageColors、ColorCube、swift-vibrant），支持 CIE-LAB 色彩空间和 WCAG 无障碍标准。**100% 原生框架实现**。
+
+**f) 风格识别 — 可行性：★★★★☆ | 难度：中等偏复杂**
+
+需要 Create ML 训练自定义模型，收集标注数据集。Core ML 社区有 ILGnet（美学评估）、Illustration2Vec（插画特征提取）等参考模型。 iOS 26+ 可借助 Foundation Models 实现零训练的风格描述生成。
+
+**g) 自动生成 Mood Board — 可行性：★★★☆☆ | 难度：复杂**
+
+需组合 CLIP 语义聚类 + 配色分析 + Foundation Models + 布局算法。无单一框架可直接实现，但核心技术均可本地化。
+
+### Apple Intelligence 与 Foundation Models Framework
+
+**Foundation Models Framework**（WWDC 2025 发布，iOS 26+）是最关键的新框架：开发者首次直接访问 Apple Intelligence 本地 LLM， 约 **3B 参数**，针对 Apple Silicon 优化（2-bit 量化），** 完全免费、完全离线、保护隐私**。支持文本提取、摘要、分类、问答，内置 guided generation 和 tool calling，Swift 原生支持最少 **3 行代码**即可调用。支持中/英/日/韩等 9 种语言。
+
+其他可用 API：**Image Playground**（本地图片生成）、**Writing Tools**（自动改写/校对/摘要）、**App Intents**（Siri/Spotlight/Shortcuts 深度集成，用户可语音搜索素材）、**Visual Intelligence**（iOS 26+，屏幕内容智能识别，「看到即收藏」场景）。 
+
+### 推荐隐私架构：本地优先
+
+|处理层                          |功能                     |方案                           |
+|-----------------------------|-----------------------|-----------------------------|
+|全本地（推荐）                      |语义搜索、OCR、配色提取、去重、基础分类  |Core ML + Vision + Accelerate|
+|Foundation Models 本地（iOS 26+）|智能标签、素材描述、自然语言理解       |Foundation Models Framework  |
+|可选云端（需授权）                    |高级风格识别、复杂 Mood Board 生成|自建或第三方 API                   |
+
+App Store 审核指南 5.1.2(i) 要求：使用外部 AI 服务必须指名道姓告知用户并获取明确同意。**  本地 Core ML 处理无需此披露**——这是强大的合规优势和用户信任加分项。 
+
+-----
+
+## 模块四：用户痛点全景图
+
+### 按频次和情绪排序的核心痛点
+
+**第一梯队：结构性缺失（整个品类层面）**
+
+**痛点 1：桌面端素材管理工具普遍缺少移动端** ⭐⭐⭐⭐⭐
+这不仅是 Eagle 的问题，而是 Eagle、PureRef、Adobe Bridge 等整个品类的结构性缺失。设计师在手机上发现灵感，必须等回到桌面才能整理，工作流存在巨大断裂。
+
+> *“It’s desktop-only, so no mobile access yet—which can be a bummer if we’re on the go.”*  — Smarative 评测 
+
+> *“Can’t wait for mobile and, especially, iPad app, to keep my stuff on hand when sketching.”* — ProductHunt 用户
+
+**痛点 2：跨设备工作流断裂** ⭐⭐⭐⭐⭐
+设计师日常涉及多设备场景，但无一款产品能无缝连接桌面端素材管理和移动端访问：
+
+|场景                      |当前痛苦的解决方案               |
+|------------------------|------------------------|
+|通勤时在手机上刷到好设计            |手动截图→回桌面手动导入 Eagle      |
+|开会时向客户展示参考素材            |无法实现，只能回电脑或提前导出到相册      |
+|iPad 上用 Procreate 时需要参考图|用 Google Drive 间接查看，体验极差|
+|碎片时间整理未分类素材             |完全无法实现                  |
+|拍摄实物材质/色板加入素材库          |手动导入流程极其复杂              |
+
+**痛点 3：设计素材管理 ≠ 照片管理** ⭐⭐⭐⭐
+Apple Photos / Google Photos 不支持 PSD/AI/SVG/字体/3D 等专业格式。iOS 端没有任何工具能预览这些格式并提供专业的标签和搜索能力。
+
+**第二梯队：Eagle 产品缺陷**
+
+**痛点 4：无原生云同步** ⭐⭐⭐⭐
+Eagle 依赖 Dropbox/iCloud/OneDrive 等第三方服务同步 Library 文件夹，  用户期望原生、可靠的同步方案。
+
+> *“I hope Eagle adds a native syncing tool in the future. While you can sync your Eagle libraries with Dropbox, it would feel more reliable if it was native to the application.”* 
+
+**痛点 5：搜索和整理效率低下** ⭐⭐⭐⭐
+Eagle 5.0 官方概括了用户的核心痛苦：「50 个文件夹后还是找不到……三小时过去了还在重命名……数百个标签加上了搜索仍然一团糟。」  这也是 Eagle 5.0 全力投入 AI 的原因。
+
+**第三梯队：易用性和服务问题**
+
+**痛点 6：专有数据格式锁定** ⭐⭐⭐
+部分用户担忧 Eagle 的 Library 格式只能用 Eagle 打开，数据迁移成本高。 
+
+**痛点 7：客服响应慢** ⭐⭐⭐
+英文用户反映邮件  17 天才收到回复， 中文支持质量优于英文。
+
+**痛点 8：支付方式有限** ⭐⭐
+部分市场仅支持 PayPal，影响购买转化。 
+
+-----
+
+## 模块五：市场时机与威胁评估
+
+### Apple 原生竞争风险：中低
+
+iOS 26（即 iOS 19）以 Liquid Glass 设计语言和 Apple Intelligence 增强为主。 Photos App 改进为 Library + Collections 双标签布局， 但**不涉及设计资产管理**，不支持 PSD/AI/SVG/字体等专业格式。Visual Intelligence 升级到屏幕内容识别， 可能带来「看到即收藏」的间接竞争，但远未触及 Eagle 的专业深度。Files App 无明显更新。**Apple 短期内不会直接进入专业设计素材管理赛道。**
+
+### 新兴竞品威胁
+
+**最值得关注的是 Kosmik**——2026 年新兴 AI 驱动的 Mood Board 工具，有移动端，支持自动打标签和智能搜索， 直接面向设计师。但其定位偏「情绪板制作」而非「素材资产管理」，与我方产品并非完全重叠。
+
+其他新兴产品如 Cosmos.so（策展型灵感平台）、Bookmarkify（云端 Eagle 替代品）威胁等级中低，均未切入 Eagle 资源库兼容这一精确定位。
+
+### 市场规模
+
+数字艺术与设计工具市场 2024 年规模 **$156 亿**，预计 2034 年达 **$769 亿**（CAGR 17.3%）。AI 设计工具细分市场 2025 年 $61 亿，预计 2035 年 $285 亿。Pinterest 2025 年全年营收 **$42.2 亿**（+15.8% YoY），月活 6 亿。Raindrop.io 月访问量约 320 万。Eagle 估计活跃付费用户 **5-20 万**。
+
+### Eagle 官方移动端计划：短期不会做
+
+Eagle 官方 FAQ 明确表态：
+
+> *“Currently, Eagle team has put all our efforts on the release of desktop app… **the team has no resources to develop the mobile version in the near future.** However… developing an Eagle mobile version would inevitably become a matter of time.”*
+
+Eagle 5.0（2026 Q1）完全聚焦 AI 桌面端功能，Twitter 推文全部围绕 4.0 更新和 5.0 AI 预告，**未提及任何移动端计划**。保守估计 Eagle 至少 **12-18 个月内不会推出移动端**。
+
+### 时机判断：2026 Q1-Q3 是最佳窗口期
+
+|有利因素                |风险因素                         |
+|--------------------|-----------------------------|
+|Eagle 明确短期不做移动端     |Eagle 可能随时改变策略               |
+|用户 5+ 年持续呼唤移动端      |Eagle .library 为私有格式，需维护兼容   |
+|无产品填补「Eagle 移动配套」定位 |Eagle 用户基数有限（5-20 万）         |
+|AI 技术成熟可实现移动端差异化    |买断制用户对订阅模式可能抵触               |
+|Eagle API/MCP 开放利于对接|Kosmik 等 AI 新工具可能分流          |
+|iPad Pro 已成设计师标配    |需在 Eagle Viewer 只读基础上提供显著增量价值|
+
+**当前（2026 年初）是进入这一赛道的最佳窗口期。** 需求明确、供给空白、技术成熟、竞争有限。建议抢占 6-9 个月的先发窗口。
+
+-----
+
+## 模块六：产品规划建议
+
+### 6.1 功能优先级清单
+
+**P0（MVP 必须，首版发布）**
+
+- **Eagle .library 资源库完整浏览**：文件夹结构、标签系统、星级评分、颜色调色板、来源 URL 全部还原
+- **瀑布流/网格浏览**：支持多种布局切换，悬停/长按预览
+- **标签搜索和筛选**：关键字、标签、文件类型、颜色等多维搜索
+- **iCloud Drive / 网络共享（SMB）读取**：无缝访问桌面端通过 iCloud 同步的 Eagle 库
+- **多格式预览**：至少支持 JPG/PNG/GIF/WEBP/SVG/PDF/PSD 预览（利用 iOS 原生能力 + Quick Look）
+- **离线缓存**：智能预加载缩略图和常用素材，断网可用
+- **素材标注/批注**：在图片上画圈、标注、写笔记
+
+**P1（首版后 1-2 个月更新）**
+
+- **AI 语义搜索**：基于 MobileCLIP 的自然语言搜图（「蓝色渐变的登录页设计」）
+- **AI 自动标签**：导入或首次扫描时自动生成标签
+- **颜色搜索**：还原 Eagle 的颜色搜索能力
+- **OCR 文字识别**：截图中的文字可搜索
+- **素材添加/编辑**：在 iOS 端新增素材到 Eagle 库（拍照、截图、Share Extension 保存）
+- **配色方案提取**：提取并展示素材主色调
+- **Share Extension**：从 Safari/Instagram/Pinterest 等任何 App 一键保存到 Eagle 库
+
+**P2（3-6 个月路线图）**
+
+- **图片去重检测**：自动发现重复/相似素材
+- **智能文件夹**：还原 Eagle 的智能文件夹逻辑
+- **批量操作**：批量打标签、批量移动、批量删除
+- **iPad 多窗口/分屏**：支持 iPad Stage Manager 和拖拽
+- **Apple Pencil 深度集成**：手写标注、手势操作
+- **Shortcuts/Siri 集成**：「Hey Siri，找上周保存的极简海报」
+- **视频/音频预览**：支持 MP4/MOV/MP3/WAV 播放
+
+**P3（6-12 个月路线图）**
+
+- **风格识别和分类**：AI 自动识别设计风格
+- **Mood Board 自动生成**：基于 CLIP 聚类自动策展
+- **Eagle MCP 集成**：与 Eagle 桌面端 AI Agent 联动
+- **团队协作**：共享库、评论、审批流程
+- **Web Clipper 增强**：内置浏览器、批量采集
+- **.eaglepack 导入/导出**：完整的素材包交换能力
+
+### 6.2 AI 功能专项建议
+
+**首版核心 AI 卖点（P1）**：
+
+1. **图片语义搜索**——这是最具差异化的功能。Eagle 5.0 在桌面端刚刚推出 AI Search，但移动端完全空白。推荐使用 Apple **MobileCLIP-S0** 模型（约 150MB），索引速度约 2000 张/分钟。将这一能力带到 iOS 端，直接弥补 Eagle 移动端空白
+1. **自动标签生成**——利用 Vision Framework 的 `VNClassifyImageRequest`（5000+ 类别）+ Foundation Models（iOS 26+）生成语义标签
+1. **OCR 全文搜索**——`VNRecognizeTextRequest` 即可，支持中英日多语言
+
+**技术方案建议**：
+
+|功能  |推荐方案                                      |模型大小    |延迟      |
+|----|------------------------------------------|--------|--------|
+|语义搜索|MobileCLIP-S0 (Core ML)                   |~150MB  |<1秒/万张  |
+|自动标签|VNClassifyImageRequest + Foundation Models|0 (系统内置)|~50ms/张 |
+|OCR |VNRecognizeTextRequest                    |0 (系统内置)|~100ms/张|
+|配色提取|vImage + k-means                          |0 (原生)  |~10ms/张 |
+|去重  |VNGenerateImageFeaturePrintRequest        |0 (系统内置)|~30ms/张 |
+
+**隐私架构建议**：采用**「100% 本地处理」策略**作为核心卖点。所有 AI 功能均在设备端完成，素材数据永不上传。这既符合 Apple 生态理念，又规避了 App Store 审核 5.1.2(i) 的复杂披露要求，更是对注重作品隐私的设计师群体的强力承诺。可在 App 内用显眼标识强调「Your assets never leave your device」。
+
+### 6.3 定价策略建议
+
+考虑到 Eagle 用户习惯买断制、iOS 市场订阅疲劳、以及需要快速获取用户基础的冷启动需求，推荐以下分层方案：
+
+|层级         |价格                   |核心权益                                                    |
+|-----------|---------------------|--------------------------------------------------------|
+|**免费版**    |$0                   |浏览 Eagle 资源库（限 1 个库）、基础搜索和筛选、50 张/月 AI 搜索配额、基础预览        |
+|**Pro 年付** |**$2.99/月**（$29.99/年）|无限库、无限 AI 搜索/标签、OCR 搜索、颜色搜索、高级筛选、编辑/添加素材、Share Extension|
+|**Pro 月付** |$4.99/月              |同上                                                      |
+|**终身版**（限时）|$49.99 一次性           |所有 Pro 功能永久解锁                                           |
+
+**定价逻辑**：
+
+- 免费版足够让 Eagle 用户感受到移动端浏览的价值，形成依赖
+- Pro 年付 $29.99 与 Eagle 桌面端 $34.95 形成价格锚定（「不到桌面端价格就能解锁移动端全功能」）
+- 终身版 $49.99 呼应 Eagle 用户的买断偏好，建议作为首发限时优惠（正式价 $79.99），驱动早期转化
+- 学生优惠 30%（与 Eagle 一致），需提交教育证明
+
+**冷启动策略**：首发 30 天内 Pro 年付 $19.99（限时 6 折），终身版 $39.99（限时 5 折）。配合 Product Hunt 发布和设计师社区推广，快速积累首批 1000 付费用户。
+
+### 6.4 产品命名建议
+
+|候选名称      |逻辑                                 |SEO关键词覆盖                  |优点                   |缺点                            |
+|----------|-----------------------------------|--------------------------|---------------------|------------------------------|
+|**Talon** |鹰的爪子（Eagle → Talon），暗示与 Eagle 的从属关系|“Talon design assets”     |简短好记、隐喻优雅、无商标冲突      |需要市场教育建立认知                    |
+|**Eaglet**|小鹰/雏鹰，Eagle 的幼崽                    |“Eaglet Eagle viewer iOS” |与 Eagle 的关系最直观，用户一眼能懂|可能被 Eagle 官方视为商标风险            |
+|**Plume** |羽毛，Eagle 的延伸意象                     |“Plume design manager iOS”|优雅、无争议、可注册           |与 Eagle 关系较间接                 |
+|**Aerie** |鹰巢，存放鹰的素材的地方                       |“Aerie asset library iOS” |含义贴切（巢 = 资源库）、读音好听   |与 American Eagle 旗下品牌 Aerie 重名|
+|**Nestly**|Nest（巢）+ ly，「素材之巢」                 |“Nestly Eagle library iOS”|好记、有亲和力、暗示收藏/整理      |略显可爱，可能不够专业                   |
+
+**推荐首选：Talon**。理由：与 Eagle 的关联自然但不直接（鹰爪 vs 鹰），商标风险极低，5 个字母简洁有力，域名 talon.app 或 gettalon.com 可能可注册，App Store 搜索「Talon Eagle」可触达目标用户。副标题可用「Asset Library for Eagle — Browse, Search & Manage on iOS」强化 SEO。
+
+**备选：Plume**。更优雅独立，长期品牌扩展空间更大，如果未来产品线不仅限于 Eagle 配套。
+
+### 6.5 差异化竞争策略
+
+**核心定位**：**Eagle 资源库的移动端大脑——AI 驱动的 iOS 素材管理伴侣**
+
+**一句话价值主张**：「在 iPhone 和 iPad 上浏览、搜索和管理你的 Eagle 素材库，用 AI 让整理效率提升 10 倍，所有数据永不离开你的设备。」
+
+**三大差异化支柱**：
+
+1. **Eagle 原生兼容**：唯一能完整读写 Eagle `.library` 格式的 iOS App（远超 Eagle Viewer 的只读功能），无需导入转换，打开 iCloud Drive 里的 Eagle 库即可使用
+1. **AI 本地智能**：MobileCLIP 语义搜索 + 自动标签 + OCR + 颜色搜索，全部设备端处理，素材隐私零风险
+1. **Apple 生态深度集成**：iCloud 同步、Shortcuts/Siri 集成、Apple Pencil 标注、iPad 多窗口/Stage Manager、Share Extension
+
+**目标用户画像**：
+
+- **核心用户**：已在桌面端使用 Eagle 的 UI/UX 设计师、平面设计师、插画师（约 5-20 万人）
+- **扩展用户**：使用 iPad + Apple Pencil 的数字艺术家、需要移动端管理参考图的自由职业设计师
+- **长尾用户**：摄影师（管理大量图片素材）、建筑/室内设计师（材质和灵感管理）、内容创作者
+
+**冷启动推广渠道**：
+
+- **Product Hunt 首日发布**：瞄准设计师社区的 upvote，准备好演示视频和截图
+- **Reddit 设计社区**：在 r/UI_Design、r/graphic_design、r/macapps、r/design 发布「Show Reddit」帖子，直接回应「Eagle 缺移动端」的历史讨论帖
+- **Eagle 官方社区**：在 Eagle 英文和中文社区发布产品介绍（定位为 Eagle 生态伙伴而非竞品）
+- **Eagle 插件生态**：开发一个 Eagle 插件，提供「一键推送到手机预览」功能，借助 Eagle 插件中心获取精准用户
+- **设计师 Newsletter**：投放 Dense Discovery、Sidebar.io、HeyDesigner 等设计师周刊
+- **Twitter/X 设计师圈**：与设计师 KOL 合作，展示真实使用场景
+- **小红书 / 即刻**：针对中文设计师社区的精准推广
+- **YouTube/B站**：制作「Eagle 用户必看：终于能在手机上管理素材了」类型教程视频
+
+-----
+
+## 结论与核心洞见
+
+这份调研揭示了一个清晰的市场机会：Eagle 桌面端与移动端之间存在一个 **5 年以上未被填补的结构性缺口**，而 Eagle 官方至少在 12-18 个月内不会自行填补。现有唯一的第三方 Eagle Viewer 仅提供只读浏览，留下了从编辑、AI 搜索到素材添加的巨大价值空间。
+
+**最关键的产品决策是将 AI 作为核心差异化而非附加功能。** Eagle 5.0 在桌面端证明了 AI 语义搜索和自动标签的巨大价值，但这些能力完全没有延伸到移动端。借助 Apple 的 MobileCLIP 和 Foundation Models Framework，我方产品可以在 iOS 上实现同等甚至更优的 AI 素材管理体验——且全部本地处理、零隐私风险。这不仅是技术特性，更是对设计师群体「作品隐私不容侵犯」这一核心价值观的回应。
+
+**时间就是这个赛道的壁垒。** Eagle 用户基数有限但极其忠诚和高价值。第一个提供完整 Eagle iOS 体验的产品将锁定这个用户群。建议在 **2026 年 Q2 发布 MVP**（P0 功能），Q3 推出 AI 功能（P1），在 Eagle 官方可能反应之前建立用户基础和品牌认知。一旦成为 Eagle 用户的默认移动端选择，即使 Eagle 未来推出官方移动版，也已积累了不可替代的先发优势——甚至可能成为 Eagle 的收购目标。
