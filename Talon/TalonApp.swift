@@ -10,7 +10,7 @@ import SwiftUI
 @_exported import PromoKit
 
 @main
-struct TemplateProjectApp: App {
+struct TalonApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

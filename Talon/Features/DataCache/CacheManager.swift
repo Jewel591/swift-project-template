@@ -78,8 +78,7 @@ enum CacheManager {
     private static func cacheDirectoryURL(for userId: String) -> URL {
         FileManager.default
             .urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
-            // TODO: 替换为实际 App 名称
-            .appendingPathComponent("TemplateProject/Cache", isDirectory: true)
+            .appendingPathComponent("Talon/Cache", isDirectory: true)
             .appendingPathComponent(userId.lowercased(), isDirectory: true)
     }
 

@@ -7,7 +7,7 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             Text("Hello, World!")
-                .navigationTitle("TemplateProject")
+                .navigationTitle("Talon")
         }
     }
 }

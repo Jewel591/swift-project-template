@@ -20,37 +20,37 @@
 			containerPortal = 07F1989D2F55A379003B1AC8 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 07F198A42F55A379003B1AC8;
-			remoteInfo = TemplateProject;
+			remoteInfo = Talon;
 		};
 		07F198BD2F55A37B003B1AC8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 07F1989D2F55A379003B1AC8 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 07F198A42F55A379003B1AC8;
-			remoteInfo = TemplateProject;
+			remoteInfo = Talon;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		07F198A52F55A379003B1AC8 /* TemplateProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TemplateProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		07F198B22F55A37B003B1AC8 /* TemplateProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TemplateProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		07F198BC2F55A37B003B1AC8 /* TemplateProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TemplateProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		07F198A52F55A379003B1AC8 /* Talon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Talon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		07F198B22F55A37B003B1AC8 /* TalonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TalonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		07F198BC2F55A37B003B1AC8 /* TalonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TalonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		07F198A72F55A379003B1AC8 /* TemplateProject */ = {
+		07F198A72F55A379003B1AC8 /* Talon */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = TemplateProject;
+			path = Talon;
 			sourceTree = "<group>";
 		};
-		07F198B52F55A37B003B1AC8 /* TemplateProjectTests */ = {
+		07F198B52F55A37B003B1AC8 /* TalonTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = TemplateProjectTests;
+			path = TalonTests;
 			sourceTree = "<group>";
 		};
-		07F198BF2F55A37B003B1AC8 /* TemplateProjectUITests */ = {
+		07F198BF2F55A37B003B1AC8 /* TalonUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = TemplateProjectUITests;
+			path = TalonUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -88,9 +88,9 @@
 		07F1989C2F55A379003B1AC8 = {
 			isa = PBXGroup;
 			children = (
-				07F198A72F55A379003B1AC8 /* TemplateProject */,
-				07F198B52F55A37B003B1AC8 /* TemplateProjectTests */,
-				07F198BF2F55A37B003B1AC8 /* TemplateProjectUITests */,
+				07F198A72F55A379003B1AC8 /* Talon */,
+				07F198B52F55A37B003B1AC8 /* TalonTests */,
+				07F198BF2F55A37B003B1AC8 /* TalonUITests */,
 				07F198A62F55A379003B1AC8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -98,9 +98,9 @@
 		07F198A62F55A379003B1AC8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				07F198A52F55A379003B1AC8 /* TemplateProject.app */,
-				07F198B22F55A37B003B1AC8 /* TemplateProjectTests.xctest */,
-				07F198BC2F55A37B003B1AC8 /* TemplateProjectUITests.xctest */,
+				07F198A52F55A379003B1AC8 /* Talon.app */,
+				07F198B22F55A37B003B1AC8 /* TalonTests.xctest */,
+				07F198BC2F55A37B003B1AC8 /* TalonUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,9 +108,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		07F198A42F55A379003B1AC8 /* TemplateProject */ = {
+		07F198A42F55A379003B1AC8 /* Talon */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 07F198C62F55A37B003B1AC8 /* Build configuration list for PBXNativeTarget "TemplateProject" */;
+			buildConfigurationList = 07F198C62F55A37B003B1AC8 /* Build configuration list for PBXNativeTarget "Talon" */;
 			buildPhases = (
 				07F198A12F55A379003B1AC8 /* Sources */,
 				07F198A22F55A379003B1AC8 /* Frameworks */,
@@ -121,9 +121,9 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				07F198A72F55A379003B1AC8 /* TemplateProject */,
+				07F198A72F55A379003B1AC8 /* Talon */,
 			);
-			name = TemplateProject;
+			name = Talon;
 			packageProductDependencies = (
 				07F198D02F55A418003B1AC8 /* LayoutUIKit */,
 				07F198D32F55A47A003B1AC8 /* SupabaseKit */,
@@ -131,13 +131,13 @@
 				07F198D92F55A521003B1AC8 /* RevenueCatKit */,
 				07F198DC2F55A614003B1AC8 /* PromoKit */,
 			);
-			productName = TemplateProject;
-			productReference = 07F198A52F55A379003B1AC8 /* TemplateProject.app */;
+			productName = Talon;
+			productReference = 07F198A52F55A379003B1AC8 /* Talon.app */;
 			productType = "com.apple.product-type.application";
 		};
-		07F198B12F55A37B003B1AC8 /* TemplateProjectTests */ = {
+		07F198B12F55A37B003B1AC8 /* TalonTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 07F198C92F55A37B003B1AC8 /* Build configuration list for PBXNativeTarget "TemplateProjectTests" */;
+			buildConfigurationList = 07F198C92F55A37B003B1AC8 /* Build configuration list for PBXNativeTarget "TalonTests" */;
 			buildPhases = (
 				07F198AE2F55A37B003B1AC8 /* Sources */,
 				07F198AF2F55A37B003B1AC8 /* Frameworks */,
@@ -149,18 +149,18 @@
 				07F198B42F55A37B003B1AC8 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				07F198B52F55A37B003B1AC8 /* TemplateProjectTests */,
+				07F198B52F55A37B003B1AC8 /* TalonTests */,
 			);
-			name = TemplateProjectTests;
+			name = TalonTests;
 			packageProductDependencies = (
 			);
-			productName = TemplateProjectTests;
-			productReference = 07F198B22F55A37B003B1AC8 /* TemplateProjectTests.xctest */;
+			productName = TalonTests;
+			productReference = 07F198B22F55A37B003B1AC8 /* TalonTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		07F198BB2F55A37B003B1AC8 /* TemplateProjectUITests */ = {
+		07F198BB2F55A37B003B1AC8 /* TalonUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 07F198CC2F55A37B003B1AC8 /* Build configuration list for PBXNativeTarget "TemplateProjectUITests" */;
+			buildConfigurationList = 07F198CC2F55A37B003B1AC8 /* Build configuration list for PBXNativeTarget "TalonUITests" */;
 			buildPhases = (
 				07F198B82F55A37B003B1AC8 /* Sources */,
 				07F198B92F55A37B003B1AC8 /* Frameworks */,
@@ -172,13 +172,13 @@
 				07F198BE2F55A37B003B1AC8 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				07F198BF2F55A37B003B1AC8 /* TemplateProjectUITests */,
+				07F198BF2F55A37B003B1AC8 /* TalonUITests */,
 			);
-			name = TemplateProjectUITests;
+			name = TalonUITests;
 			packageProductDependencies = (
 			);
-			productName = TemplateProjectUITests;
-			productReference = 07F198BC2F55A37B003B1AC8 /* TemplateProjectUITests.xctest */;
+			productName = TalonUITests;
+			productReference = 07F198BC2F55A37B003B1AC8 /* TalonUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -204,7 +204,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 07F198A02F55A379003B1AC8 /* Build configuration list for PBXProject "TemplateProject" */;
+			buildConfigurationList = 07F198A02F55A379003B1AC8 /* Build configuration list for PBXProject "Talon" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -225,9 +225,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				07F198A42F55A379003B1AC8 /* TemplateProject */,
-				07F198B12F55A37B003B1AC8 /* TemplateProjectTests */,
-				07F198BB2F55A37B003B1AC8 /* TemplateProjectUITests */,
+				07F198A42F55A379003B1AC8 /* Talon */,
+				07F198B12F55A37B003B1AC8 /* TalonTests */,
+				07F198BB2F55A37B003B1AC8 /* TalonUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -283,12 +283,12 @@
 /* Begin PBXTargetDependency section */
 		07F198B42F55A37B003B1AC8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 07F198A42F55A379003B1AC8 /* TemplateProject */;
+			target = 07F198A42F55A379003B1AC8 /* Talon */;
 			targetProxy = 07F198B32F55A37B003B1AC8 /* PBXContainerItemProxy */;
 		};
 		07F198BE2F55A37B003B1AC8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 07F198A42F55A379003B1AC8 /* TemplateProject */;
+			target = 07F198A42F55A379003B1AC8 /* Talon */;
 			targetProxy = 07F198BD2F55A37B003B1AC8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -438,7 +438,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 26.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.linliao.TemplateProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.linliao.Talon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
@@ -485,7 +485,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 26.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.linliao.TemplateProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.linliao.Talon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
@@ -512,7 +512,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
 				MACOSX_DEPLOYMENT_TARGET = 26.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.linliao.TemplateProjectTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.linliao.TalonTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
@@ -522,7 +522,7 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TemplateProject.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TemplateProject";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Talon.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Talon";
 				XROS_DEPLOYMENT_TARGET = 26.2;
 			};
 			name = Debug;
@@ -537,7 +537,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
 				MACOSX_DEPLOYMENT_TARGET = 26.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.linliao.TemplateProjectTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.linliao.TalonTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
@@ -547,7 +547,7 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TemplateProject.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TemplateProject";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Talon.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Talon";
 				XROS_DEPLOYMENT_TARGET = 26.2;
 			};
 			name = Release;
@@ -561,7 +561,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
 				MACOSX_DEPLOYMENT_TARGET = 26.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.linliao.TemplateProjectUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.linliao.TalonUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
@@ -571,7 +571,7 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_TARGET_NAME = TemplateProject;
+				TEST_TARGET_NAME = Talon;
 				XROS_DEPLOYMENT_TARGET = 26.2;
 			};
 			name = Debug;
@@ -585,7 +585,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
 				MACOSX_DEPLOYMENT_TARGET = 26.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.linliao.TemplateProjectUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.linliao.TalonUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
@@ -595,7 +595,7 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_TARGET_NAME = TemplateProject;
+				TEST_TARGET_NAME = Talon;
 				XROS_DEPLOYMENT_TARGET = 26.2;
 			};
 			name = Release;
@@ -603,7 +603,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		07F198A02F55A379003B1AC8 /* Build configuration list for PBXProject "TemplateProject" */ = {
+		07F198A02F55A379003B1AC8 /* Build configuration list for PBXProject "Talon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				07F198C42F55A37B003B1AC8 /* Debug */,
@@ -612,7 +612,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		07F198C62F55A37B003B1AC8 /* Build configuration list for PBXNativeTarget "TemplateProject" */ = {
+		07F198C62F55A37B003B1AC8 /* Build configuration list for PBXNativeTarget "Talon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				07F198C72F55A37B003B1AC8 /* Debug */,
@@ -621,7 +621,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		07F198C92F55A37B003B1AC8 /* Build configuration list for PBXNativeTarget "TemplateProjectTests" */ = {
+		07F198C92F55A37B003B1AC8 /* Build configuration list for PBXNativeTarget "TalonTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				07F198CA2F55A37B003B1AC8 /* Debug */,
@@ -630,7 +630,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		07F198CC2F55A37B003B1AC8 /* Build configuration list for PBXNativeTarget "TemplateProjectUITests" */ = {
+		07F198CC2F55A37B003B1AC8 /* Build configuration list for PBXNativeTarget "TalonUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				07F198CD2F55A37B003B1AC8 /* Debug */,

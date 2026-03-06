@@ -1,13 +1,13 @@
 //
-//  TemplateProjectUITestsLaunchTests.swift
-//  TemplateProjectUITests
+//  TalonUITestsLaunchTests.swift
+//  TalonUITests
 //
 //  Created by Ivens Liao on 3/2/26.
 //
 
 import XCTest
 
-final class TemplateProjectUITestsLaunchTests: XCTestCase {
+final class TalonUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

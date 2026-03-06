@@ -6,11 +6,11 @@ set -euo pipefail
 # 用法: ./create-project.sh <ProjectName> [org_id]
 #
 # 在 GitHub "Use this template" 克隆后运行，
-# 将 TemplateProject 就地重命名为新项目名。
+# 将 Talon 就地重命名为新项目名。
 # ============================================================
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-OLD_NAME="TemplateProject"
+OLD_NAME="Talon"
 DEFAULT_ORG_ID="com.linliao"
 
 # 参数解析

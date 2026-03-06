@@ -1,10 +1,10 @@
 <!-- 格式规范：尽可能减少加粗格式，保持文档简洁易读 -->
 
-# TemplateProject
+# Talon
 
 ## 基本信息
 
-- 名称：TemplateProject
+- 名称：Talon
 - 平台：iOS / macOS (SwiftUI)
 - 后端：Supabase
 - 数据持久化：SwiftData
@@ -36,5 +36,5 @@
 
 ### 全局导入
 
-- `TemplateProjectApp.swift` 使用 `@_exported import` 全局导出了 `LayoutUIKit` 和 `BrandKit`
+- `TalonApp.swift` 使用 `@_exported import` 全局导出了 `LayoutUIKit` 和 `BrandKit`
 - 其他文件无需重复导入这两个模块，直接使用即可
