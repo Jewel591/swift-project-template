@@ -63,13 +63,13 @@
 
 ### 功能补全
 
-- [ ] **App 启动书签恢复**: `ContentView` 启动时检查已保存的 security-scoped bookmark，自动恢复上次打开的 library，避免每次手动选择
-- [ ] **增量索引**: 当前 `LibraryIndexer` 只支持全量导入，需要利用 `EagleLibraryScanner.scanModifiedAssetFolders(since:)` 实现增量更新
-- [ ] **AssetPreviewView 缩放手势**: `ZoomableImageView` 目前只是简单显示图片，需要添加 MagnifyGesture + DragGesture 实现双指缩放和拖拽
-- [ ] **搜索筛选 UI**: `SearchViewModel` 已有 `selectedTags`、`selectedFileTypes`、`minRating` 等筛选状态，但 `SearchView` 尚未提供筛选面板 UI
-- [ ] **DiskCacheManager 与 ThumbnailLoader 集成**: 当前 `ThumbnailLoader` 只使用内存缓存，需要在 cache miss 时先查磁盘缓存
-- [ ] **分页加载触发**: `AssetGridView` 需要在滚动到底部时触发 `viewModel.loadNextPage()`
-- [ ] **GRDBQuery @Query 宏集成**: 考虑用 GRDBQuery 的 `@Query` property wrapper 替换手动 `ValueObservation` 代码
+- [x] **App 启动书签恢复**: `ContentView` 启动时自动从 security-scoped bookmark 恢复上次打开的 library，并触发增量索引
+- [x] **增量索引**: `LibraryIndexer.incrementalIndex(since:)` 只扫描修改过的 asset 文件夹，增量更新 FTS5
+- [x] **AssetPreviewView 缩放手势**: `ZoomableImageView` 支持 MagnifyGesture 缩放（1x-5x）、DragGesture 拖拽、双击切换 3x/1x
+- [x] **搜索筛选 UI**: `SearchView` 添加文件类型 FilterChip、评分星级筛选、Clear Filters 按钮，筛选状态驱动搜索
+- [x] **DiskCacheManager 与 ThumbnailLoader 集成**: `ThumbnailLoader` 现在三级缓存：memory → disk → source，disk miss 时自动写入
+- [x] **分页加载触发**: `AssetGridView` 在倒数第 5 个 item 出现时自动触发 `loadNextPage()`，带 loading indicator
+- [x] **GRDBQuery @Query 宏集成**: 新增 `DatabaseContext.swift`，提供 `appDatabase` 环境键 + `AssetListRequest`、`FolderListRequest`、`AssetCountRequest` 三个可复用 Query 类型
 
 ### 测试
 
@@ -80,6 +80,6 @@
 
 ### 优化
 
-- [ ] FTS5 索引增量更新（当前全量重建）
+- [x] FTS5 索引增量更新（`incrementalIndex` 已支持按 asset 粒度增量更新 FTS5）
 - [ ] 大库性能测试（10万+ 素材）
 - [ ] 内存占用监控和 thumbnail cache 调优
