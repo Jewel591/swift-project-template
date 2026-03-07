@@ -14,6 +14,9 @@ struct ContentView: View {
                 welcomeView
             }
         }
+        .task {
+            await restoreLastLibrary()
+        }
         .fileImporter(
             isPresented: $showFilePicker,
             allowedContentTypes: [.folder],
@@ -24,7 +27,7 @@ struct ContentView: View {
     }
 
     private func mainTabView(database: AppDatabase, libraryURL: URL) -> some View {
-        TabView(selection: $selectedTab) {
+        TabView(selection: $selectedTab) {  // .environment(\.appDatabase, database) applied below
             Tab("Browse", systemImage: "photo.on.rectangle.angled", value: 0) {
                 LibraryBrowserView(
                     database: database,
@@ -43,6 +46,7 @@ struct ContentView: View {
                 SettingsView()
             }
         }
+        .environment(\.appDatabase, database)
     }
 
     private var welcomeView: some View {
@@ -68,6 +72,33 @@ struct ContentView: View {
             }
             .buttonStyle(.borderedProminent)
         }
+    }
+
+    /// Restore last opened library from security-scoped bookmark on app launch
+    private func restoreLastLibrary() async {
+        guard database == nil,
+              let lastPath = UserDefaults.standard.string(forKey: "lastLibraryPath")
+        else { return }
+
+        let accessManager = ScopedAccessManager()
+        do {
+            guard let url = try await accessManager.resolveBookmark(for: lastPath) else { return }
+            guard url.startAccessingSecurityScopedResource() else { return }
+            defer { url.stopAccessingSecurityScopedResource() }
+
+            let dbPath = url.appendingPathComponent(".talon_index.sqlite").path
+            let db = try AppDatabase.openLibrary(at: dbPath)
+            self.database = db
+            self.libraryURL = url
+
+            // Run incremental index in background if we have a previous index date
+            let lastIndexTimestamp = UserDefaults.standard.double(forKey: "com.talon.lastIndexDate")
+            if lastIndexTimestamp > 0 {
+                let lastDate = Date(timeIntervalSince1970: lastIndexTimestamp)
+                let indexer = LibraryIndexer(database: db)
+                try? await indexer.incrementalIndex(libraryURL: url, since: lastDate) { _, _ in }
+            }
+        } catch {}
     }
 
     private func handleFolderSelection(_ result: Result<[URL], Error>) {

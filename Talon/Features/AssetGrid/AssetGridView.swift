@@ -2,6 +2,7 @@ import SwiftUI
 
 struct AssetGridView: View {
     @Bindable var viewModel: AssetGridViewModel
+    let database: AppDatabase
     let libraryURL: URL
     let onAssetTap: (Asset) -> Void
 
@@ -35,9 +36,15 @@ struct AssetGridView: View {
                         .aspectRatio(1, contentMode: .fill)
                         .clipped()
                         .onTapGesture { onAssetTap(asset) }
+                        .onAppear { loadMoreIfNeeded(asset) }
                 }
             }
             .padding(.horizontal, BrandSpacing.pageHorizontal)
+
+            if viewModel.isLoading {
+                ProgressView()
+                    .padding()
+            }
         }
     }
 
@@ -54,9 +61,15 @@ struct AssetGridView: View {
                             contentMode: .fit
                         )
                         .onTapGesture { onAssetTap(asset) }
+                        .onAppear { loadMoreIfNeeded(asset) }
                 }
             }
             .padding(.horizontal, BrandSpacing.pageHorizontal)
+
+            if viewModel.isLoading {
+                ProgressView()
+                    .padding()
+            }
         }
     }
 
@@ -78,8 +91,20 @@ struct AssetGridView: View {
                 }
             }
             .onTapGesture { onAssetTap(asset) }
+            .onAppear { loadMoreIfNeeded(asset) }
         }
         .listStyle(.plain)
+    }
+
+    /// Trigger pagination when the last few items appear
+    private func loadMoreIfNeeded(_ asset: Asset) {
+        let thresholdIndex = max(viewModel.assets.count - 5, 0)
+        guard let index = viewModel.assets.firstIndex(where: { $0.id == asset.id }),
+              index >= thresholdIndex
+        else { return }
+        Task {
+            await viewModel.loadNextPage(database: database)
+        }
     }
 
     private func assetThumbnail(_ asset: Asset) -> some View {

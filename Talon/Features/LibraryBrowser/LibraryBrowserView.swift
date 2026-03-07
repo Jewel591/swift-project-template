@@ -18,6 +18,7 @@ struct LibraryBrowserView: View {
                 }
                 AssetGridView(
                     viewModel: gridVM,
+                    database: database,
                     libraryURL: libraryURL,
                     onAssetTap: { selectedAsset = $0 }
                 )

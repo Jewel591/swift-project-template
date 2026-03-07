@@ -83,13 +83,65 @@ struct ZoomableImageView: View {
     let url: URL
     let fallbackURL: URL
 
+    @State private var scale: CGFloat = 1.0
+    @State private var lastScale: CGFloat = 1.0
+    @State private var offset: CGSize = .zero
+    @State private var lastOffset: CGSize = .zero
+
     var body: some View {
-        if let image = UIImage(contentsOfFile: url.path) ?? UIImage(contentsOfFile: fallbackURL.path) {
-            Image(uiImage: image)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-        } else {
-            ContentUnavailableView("Cannot load image", systemImage: "photo")
+        GeometryReader { geometry in
+            if let image = UIImage(contentsOfFile: url.path) ?? UIImage(contentsOfFile: fallbackURL.path) {
+                Image(uiImage: image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .scaleEffect(scale)
+                    .offset(offset)
+                    .gesture(
+                        MagnifyGesture()
+                            .onChanged { value in
+                                scale = lastScale * value.magnification
+                            }
+                            .onEnded { value in
+                                lastScale = max(1.0, min(scale, 5.0))
+                                scale = lastScale
+                                if lastScale == 1.0 {
+                                    withAnimation(.spring(duration: 0.3)) {
+                                        offset = .zero
+                                        lastOffset = .zero
+                                    }
+                                }
+                            }
+                    )
+                    .simultaneousGesture(
+                        DragGesture()
+                            .onChanged { value in
+                                guard scale > 1.0 else { return }
+                                offset = CGSize(
+                                    width: lastOffset.width + value.translation.width,
+                                    height: lastOffset.height + value.translation.height
+                                )
+                            }
+                            .onEnded { _ in
+                                lastOffset = offset
+                            }
+                    )
+                    .onTapGesture(count: 2) {
+                        withAnimation(.spring(duration: 0.3)) {
+                            if scale > 1.0 {
+                                scale = 1.0
+                                lastScale = 1.0
+                                offset = .zero
+                                lastOffset = .zero
+                            } else {
+                                scale = 3.0
+                                lastScale = 3.0
+                            }
+                        }
+                    }
+                    .frame(width: geometry.size.width, height: geometry.size.height)
+            } else {
+                ContentUnavailableView("Cannot load image", systemImage: "photo")
+            }
         }
     }
 }
