@@ -1,0 +1,55 @@
+name: Build Check
+
+on:
+  push:
+    branches: [main, claude/**]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build iOS
+    runs-on: macos-15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode_16.2.app/Contents/Developer
+
+      - name: Show Xcode version
+        run: xcodebuild -version
+
+      - name: Resolve packages
+        run: xcodebuild -resolvePackageDependencies -project Talon.xcodeproj -scheme Talon
+
+      - name: Build for iOS Simulator
+        run: |
+          xcodebuild build \
+            -project Talon.xcodeproj \
+            -scheme Talon \
+            -destination 'platform=iOS Simulator,name=iPhone 16,OS=latest' \
+            -configuration Debug \
+            CODE_SIGNING_ALLOWED=NO \
+            | xcpretty --color && exit ${PIPESTATUS[0]}
+
+  # Uncomment when unit tests are added
+  # test:
+  #   name: Run Tests
+  #   runs-on: macos-15
+  #   needs: build
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - run: sudo xcode-select -s /Applications/Xcode_16.2.app/Contents/Developer
+  #     - name: Run unit tests
+  #       run: |
+  #         xcodebuild test \
+  #           -project Talon.xcodeproj \
+  #           -scheme Talon \
+  #           -destination 'platform=iOS Simulator,name=iPhone 16,OS=latest' \
+  #           CODE_SIGNING_ALLOWED=NO \
+  #           | xcpretty --color && exit ${PIPESTATUS[0]}
