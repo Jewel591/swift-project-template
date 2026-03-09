@@ -1,5 +1,6 @@
 // MARK: - 变更日志
 // [2026-03-05] 新建 CacheManager 模板，JSON 文件缓存工具，支持 per-user 隔离、原子写入、stale-while-revalidate
+// [2026-03-06] Swift 6 并发修复：写入改为同步原子操作，消除 Task.detached 跨隔离域问题
 //
 // 适用场景：使用 Supabase 作为后端服务时的本地数据缓存，提供 cache-then-network 体验。
 // 不适用于 SwiftData 项目 —— SwiftData 自带本地持久化和 iCloud 同步，无需额外缓存层。
@@ -51,7 +52,7 @@ struct CacheResult<T> {
 /// - per-user 隔离：缓存目录按 userId 分隔
 /// - 原子写入：使用 `.atomic` 选项，内部 tmp + rename，并发安全
 /// - stale-while-revalidate：返回缓存数据 + isStale 标记，调用方决定是否后台刷新
-/// - fire-and-forget 写入：写缓存在后台线程异步执行，不阻塞主线程
+/// - 同步写入：缓存文件通常很小（JSON），同步原子写入避免 Swift 6 跨隔离域问题
 /// - 同步读取：缓存文件通常很小，主线程同步读取可接受
 ///
 /// 使用示例：
@@ -99,27 +100,25 @@ enum CacheManager {
         return base
     }
 
-    // MARK: - Write (atomic, fire-and-forget)
+    // MARK: - Write (synchronous, atomic)
 
     static func write<T: Codable>(_ value: T, key: String, userId: String) {
-        Task.detached(priority: .utility) {
-            do {
-                let dir = try ensureCacheDirectory(for: userId)
-                let target = dir.appendingPathComponent("\(key).json")
+        do {
+            let dir = try ensureCacheDirectory(for: userId)
+            let target = dir.appendingPathComponent("\(key).json")
 
-                let envelope = CacheEnvelope(
-                    schemaVersion: schemaVersion,
-                    fetchedAt: Date(),
-                    data: value
-                )
-                let data = try encoder.encode(envelope)
-                // .atomic 内部使用系统临时文件 + rename，天然并发安全
-                try data.write(to: target, options: .atomic)
+            let envelope = CacheEnvelope(
+                schemaVersion: schemaVersion,
+                fetchedAt: Date(),
+                data: value
+            )
+            let data = try encoder.encode(envelope)
+            // .atomic 内部使用系统临时文件 + rename，天然并发安全
+            try data.write(to: target, options: .atomic)
 
-                logger.debug("缓存写入成功: \(key)")
-            } catch {
-                logger.error("缓存写入失败: \(key) — \(error.localizedDescription)")
-            }
+            logger.debug("缓存写入成功: \(key)")
+        } catch {
+            logger.error("缓存写入失败: \(key) — \(error.localizedDescription)")
         }
     }
 

@@ -1,13 +1,5 @@
 {
   "mcpServers": {
-    "xcode": {
-      "type": "stdio",
-      "command": "xcrun",
-      "args": [
-        "mcpbridge"
-      ],
-      "env": {}
-    },
     "revenuecat": {
       "type": "http",
       "url": "https://mcp.revenuecat.ai/mcp",
