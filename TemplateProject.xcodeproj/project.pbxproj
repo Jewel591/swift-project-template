@@ -7,11 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		07F198D12F55A418003B1AC8 /* LayoutUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 07F198D02F55A418003B1AC8 /* LayoutUIKit */; };
-		07F198D42F55A47A003B1AC8 /* SupabaseKit in Frameworks */ = {isa = PBXBuildFile; productRef = 07F198D32F55A47A003B1AC8 /* SupabaseKit */; };
-		07F198D72F55A4BA003B1AC8 /* BrandKit in Frameworks */ = {isa = PBXBuildFile; productRef = 07F198D62F55A4BA003B1AC8 /* BrandKit */; };
-		07F198DA2F55A521003B1AC8 /* RevenueCatKit in Frameworks */ = {isa = PBXBuildFile; productRef = 07F198D92F55A521003B1AC8 /* RevenueCatKit */; };
-		07F198DD2F55A614003B1AC8 /* PromoKit in Frameworks */ = {isa = PBXBuildFile; productRef = 07F198DC2F55A614003B1AC8 /* PromoKit */; };
+		AA000001AAAAAA00000001AA /* Sodium in Frameworks */ = {isa = PBXBuildFile; productRef = AA000003AAAAAA00000003AA /* Sodium */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,11 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07F198D12F55A418003B1AC8 /* LayoutUIKit in Frameworks */,
-				07F198D72F55A4BA003B1AC8 /* BrandKit in Frameworks */,
-				07F198DD2F55A614003B1AC8 /* PromoKit in Frameworks */,
-				07F198D42F55A47A003B1AC8 /* SupabaseKit in Frameworks */,
-				07F198DA2F55A521003B1AC8 /* RevenueCatKit in Frameworks */,
+				AA000001AAAAAA00000001AA /* Sodium in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,11 +117,7 @@
 			);
 			name = TemplateProject;
 			packageProductDependencies = (
-				07F198D02F55A418003B1AC8 /* LayoutUIKit */,
-				07F198D32F55A47A003B1AC8 /* SupabaseKit */,
-				07F198D62F55A4BA003B1AC8 /* BrandKit */,
-				07F198D92F55A521003B1AC8 /* RevenueCatKit */,
-				07F198DC2F55A614003B1AC8 /* PromoKit */,
+				AA000003AAAAAA00000003AA /* Sodium */,
 			);
 			productName = TemplateProject;
 			productReference = 07F198A52F55A379003B1AC8 /* TemplateProject.app */;
@@ -214,11 +202,7 @@
 			mainGroup = 07F1989C2F55A379003B1AC8;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				07F198CF2F55A418003B1AC8 /* XCRemoteSwiftPackageReference "LayoutUIKit" */,
-				07F198D22F55A47A003B1AC8 /* XCRemoteSwiftPackageReference "SupabaseKit" */,
-				07F198D52F55A4BA003B1AC8 /* XCRemoteSwiftPackageReference "BrandKit" */,
-				07F198D82F55A521003B1AC8 /* XCRemoteSwiftPackageReference "RevenueCatKit" */,
-				07F198DB2F55A614003B1AC8 /* XCRemoteSwiftPackageReference "PromoKit" */,
+				AA000002AAAAAA00000002AA /* XCRemoteSwiftPackageReference "swift-sodium" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 07F198A62F55A379003B1AC8 /* Products */;
@@ -433,10 +417,10 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.linliao.TemplateProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -451,7 +435,7 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				XROS_DEPLOYMENT_TARGET = 26.2;
+				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -480,10 +464,10 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.linliao.TemplateProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -498,7 +482,7 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				XROS_DEPLOYMENT_TARGET = 26.2;
+				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -509,8 +493,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
-				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.linliao.TemplateProjectTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -523,7 +507,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TemplateProject.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TemplateProject";
-				XROS_DEPLOYMENT_TARGET = 26.2;
+				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -534,8 +518,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
-				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.linliao.TemplateProjectTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -548,7 +532,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TemplateProject.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TemplateProject";
-				XROS_DEPLOYMENT_TARGET = 26.2;
+				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -558,8 +542,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
-				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.linliao.TemplateProjectUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -572,7 +556,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
 				TEST_TARGET_NAME = TemplateProject;
-				XROS_DEPLOYMENT_TARGET = 26.2;
+				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -582,8 +566,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
-				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.linliao.TemplateProjectUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -596,7 +580,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
 				TEST_TARGET_NAME = TemplateProject;
-				XROS_DEPLOYMENT_TARGET = 26.2;
+				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -642,73 +626,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		07F198CF2F55A418003B1AC8 /* XCRemoteSwiftPackageReference "LayoutUIKit" */ = {
+		AA000002AAAAAA00000002AA /* XCRemoteSwiftPackageReference "swift-sodium" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Jewel591/LayoutUIKit";
+			repositoryURL = "https://github.com/jedisct1/swift-sodium";
 			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-		07F198D22F55A47A003B1AC8 /* XCRemoteSwiftPackageReference "SupabaseKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Jewel591/SupabaseKit";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-		07F198D52F55A4BA003B1AC8 /* XCRemoteSwiftPackageReference "BrandKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Jewel591/BrandKit";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-		07F198D82F55A521003B1AC8 /* XCRemoteSwiftPackageReference "RevenueCatKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Jewel591/RevenueCatKit";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-		07F198DB2F55A614003B1AC8 /* XCRemoteSwiftPackageReference "PromoKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Jewel591/PromoKit";
-			requirement = {
-				branch = main;
+				branch = master;
 				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		07F198D02F55A418003B1AC8 /* LayoutUIKit */ = {
+		AA000003AAAAAA00000003AA /* Sodium */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 07F198CF2F55A418003B1AC8 /* XCRemoteSwiftPackageReference "LayoutUIKit" */;
-			productName = LayoutUIKit;
-		};
-		07F198D32F55A47A003B1AC8 /* SupabaseKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 07F198D22F55A47A003B1AC8 /* XCRemoteSwiftPackageReference "SupabaseKit" */;
-			productName = SupabaseKit;
-		};
-		07F198D62F55A4BA003B1AC8 /* BrandKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 07F198D52F55A4BA003B1AC8 /* XCRemoteSwiftPackageReference "BrandKit" */;
-			productName = BrandKit;
-		};
-		07F198D92F55A521003B1AC8 /* RevenueCatKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 07F198D82F55A521003B1AC8 /* XCRemoteSwiftPackageReference "RevenueCatKit" */;
-			productName = RevenueCatKit;
-		};
-		07F198DC2F55A614003B1AC8 /* PromoKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 07F198DB2F55A614003B1AC8 /* XCRemoteSwiftPackageReference "PromoKit" */;
-			productName = PromoKit;
+			package = AA000002AAAAAA00000002AA /* XCRemoteSwiftPackageReference "swift-sodium" */;
+			productName = Sodium;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
