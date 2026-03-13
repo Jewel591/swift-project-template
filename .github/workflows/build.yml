@@ -23,7 +23,7 @@ jobs:
           xcodebuild build \
             -project TemplateProject.xcodeproj \
             -scheme TemplateProject \
-            -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.2' \
+            -destination 'platform=macOS' \
             -skipPackagePluginValidation \
             CODE_SIGNING_ALLOWED=NO
 
@@ -32,6 +32,6 @@ jobs:
           xcodebuild test \
             -project TemplateProject.xcodeproj \
             -scheme TemplateProject \
-            -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.2' \
+            -destination 'platform=macOS' \
             -skipPackagePluginValidation \
             CODE_SIGNING_ALLOWED=NO
