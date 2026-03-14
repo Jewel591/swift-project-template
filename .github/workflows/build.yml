@@ -1,84 +1,37 @@
-name: Build Check
+name: Build & Test
 
 on:
   push:
-    branches: [main, claude/**]
+    branches: [main, 'claude/**']
   pull_request:
     branches: [main]
 
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
-
 jobs:
-  build:
-    name: Build iOS
-    # Requires Xcode 26+ (Swift 6, MainActor default isolation)
-    # Update runner when GitHub adds macos-26; until then use latest available
+  build-and-test:
     runs-on: macos-15
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Select latest Xcode
-        run: |
-          # Pick the highest versioned Xcode available on the runner
-          LATEST_XCODE=$(ls -d /Applications/Xcode*.app 2>/dev/null | sort -V | tail -1)
-          if [ -z "$LATEST_XCODE" ]; then
-            echo "No Xcode found on runner"
-            exit 1
-          fi
-          echo "Using: $LATEST_XCODE"
-          sudo xcode-select -s "$LATEST_XCODE/Contents/Developer"
+      - name: Select Xcode 16.2
+        run: sudo xcode-select -s /Applications/Xcode_16.2.app/Contents/Developer
 
-      - name: Show Xcode & Swift version
-        run: |
-          xcodebuild -version
-          swift --version
+      - name: Show Xcode version
+        run: xcodebuild -version
 
-      - name: Check Xcode version compatibility
-        run: |
-          XCODE_VERSION=$(xcodebuild -version | head -1 | sed 's/Xcode //')
-          MAJOR=$(echo "$XCODE_VERSION" | cut -d. -f1)
-          if [ "$MAJOR" -lt 26 ]; then
-            echo "::warning::Xcode $XCODE_VERSION found, but project requires Xcode 26+. Build may fail."
-            echo "::warning::Update runner to macos-26 when available, or use a self-hosted runner with Xcode 26."
-          fi
-
-      - name: Resolve packages
-        run: |
-          xcodebuild -resolvePackageDependencies \
-            -project Talon.xcodeproj \
-            -scheme Talon \
-            -clonedSourcePackagesDirPath .spm-cache
-
-      - name: Build for iOS Simulator
+      - name: Build
         run: |
           xcodebuild build \
-            -project Talon.xcodeproj \
-            -scheme Talon \
-            -destination 'platform=iOS Simulator,name=iPhone 16,OS=latest' \
-            -configuration Debug \
-            -clonedSourcePackagesDirPath .spm-cache \
-            CODE_SIGNING_ALLOWED=NO \
-            | xcpretty --color && exit ${PIPESTATUS[0]}
+            -project TemplateProject.xcodeproj \
+            -scheme TemplateProject \
+            -destination 'platform=macOS' \
+            -skipPackagePluginValidation \
+            CODE_SIGNING_ALLOWED=NO
 
-  # Uncomment when unit tests are added
-  # test:
-  #   name: Run Tests
-  #   runs-on: macos-15
-  #   needs: build
-  #   steps:
-  #     - uses: actions/checkout@v4
-  #     - name: Select latest Xcode
-  #       run: |
-  #         LATEST_XCODE=$(ls -d /Applications/Xcode*.app 2>/dev/null | sort -V | tail -1)
-  #         sudo xcode-select -s "$LATEST_XCODE/Contents/Developer"
-  #     - name: Run unit tests
-  #       run: |
-  #         xcodebuild test \
-  #           -project Talon.xcodeproj \
-  #           -scheme Talon \
-  #           -destination 'platform=iOS Simulator,name=iPhone 16,OS=latest' \
-  #           CODE_SIGNING_ALLOWED=NO \
-  #           | xcpretty --color && exit ${PIPESTATUS[0]}
+      - name: Test
+        run: |
+          xcodebuild test \
+            -project TemplateProject.xcodeproj \
+            -scheme TemplateProject \
+            -destination 'platform=macOS' \
+            -skipPackagePluginValidation \
+            CODE_SIGNING_ALLOWED=NO
